@@ -62,7 +62,7 @@
                 "displayName": "WebAppConnectionStrings"
               },
               "properties": {
-                "defaultConnection": {
+                "DefaultConnection": {
                   "value": "[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', parameters('databaseServerName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';User Id=', parameters('databaseUsername'), ';Password=', parameters('databasePassword'), ';')]",
                   "type": "SQLAzure"
                 }
