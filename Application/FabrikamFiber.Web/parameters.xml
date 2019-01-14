@@ -1,0 +1,12 @@
+﻿<parameters>
+  
+
+  <parameter name="Express" defaultValue="Data Source=#{servername}#data.database.windows.net;Initial Catalog=FabrikamFiber;Integrated Security=False;User ID=#{username}#;Password=#{password}#;Connect Timeout=15;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True">
+    <parameterEntry kind="XmlFile" scope="obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FabrikamFiber-Express']/@value" />
+  </parameter>
+
+  <parameter name="DataWarehouse" defaultValue="Data Source=#{servername}#data.database.windows.net;Initial Catalog=FabrikamFiber;Integrated Security=False;User ID=#{username}#;Password=#{password}#;Connect Timeout=15;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True">
+    <parameterEntry kind="XmlFile" scope="obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FabrikamFiber-DataWarehouse']/@value" />
+  </parameter>
+
+</parameters>
