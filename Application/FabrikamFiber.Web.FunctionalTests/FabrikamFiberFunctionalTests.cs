@@ -26,7 +26,7 @@ namespace FabrikamFiber.FunctionalTests
                 driver = GetChromeDriver();
                 var webAppUrl = testContext.Properties["webAppUrl"].ToString();
                 driver.Navigate().GoToUrl(webAppUrl);
-                Assert.AreEqual("Home Page - My ASP.NET Application", driver.Title, "Expected title to be 'Home Page - My ASP.NET Application'");
+                Assert.AreEqual("Home Page", driver.Title, "Expected title to be 'Home Page'");
                 var filePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString()) + ".png";
                 var screenshot = driver.GetScreenshot();
                 screenshot.SaveAsFile(filePath);
