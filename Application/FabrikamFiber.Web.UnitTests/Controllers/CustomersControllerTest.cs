@@ -9,7 +9,7 @@
     using FabrikamFiber.Web.Controllers;
     using Xunit;
 
-    public class CustomersControllerTest
+    public class CustomersControllerTest: IDisposable
     {
         MockCustomerRepository mockCustomerRepo;
         CustomersController controller;
@@ -63,6 +63,20 @@
 
             Assert.True(mockCustomerRepo.IsFindCalled);
             Assert.True(typeof(Customer).IsAssignableFrom(model.GetType()));
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                controller.Dispose();
+            }
         }
 
         #region Mocks

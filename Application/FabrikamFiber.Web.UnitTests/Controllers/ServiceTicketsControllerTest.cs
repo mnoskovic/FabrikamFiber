@@ -12,7 +12,7 @@
     using NSubstitute;
     using Xunit;
 
-    public class ServiceTicketsControllerTest
+    public class ServiceTicketsControllerTest: IDisposable
     {
         ICustomerRepository mockCustomerRepo;
         IEmployeeRepository mockEmployeeRepo;
@@ -77,6 +77,20 @@
             Assert.Equal(101, ticket.AssignedToID);
             mockScheduleItemRepo.Received().Save();
             mockServiceTicketRepo.Received().Save();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                controller.Dispose();
+            }
         }
     }
 }

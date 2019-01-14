@@ -35,7 +35,7 @@ namespace FabrikamFiber.Web.Controllers
         {
             if (customer == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(customer));
             }
 
             if (ModelState.IsValid)
